@@ -1,0 +1,23 @@
+Results for the extraLargeArray
+insert 2.5938854 s
+append 17.62 ms
+
+Results for the LargeArray
+insert 26.3415 ms
+append 1.9096 ms
+
+Results for the mediumArray
+insert 432.4 μs
+append 470 μs
+
+Results for the smallArray
+insert 325.6 μs
+append 688.9 μs
+
+Results for the tinyArray
+insert 175.8 μs
+append 328.4 μs
+
+As far as I can tell it insert starts out slower but append scales better with the larger arrays.
+I think it's because when we use unshift which adds a value at index [0] and makes all the other values
+reassign themselves so- it ends up taking longer.
